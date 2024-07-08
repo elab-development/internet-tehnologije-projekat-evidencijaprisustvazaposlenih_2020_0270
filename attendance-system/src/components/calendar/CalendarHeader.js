@@ -13,6 +13,7 @@ const CalendarHeader = () => {
 
   const handleNextMonth = () => {
     setMonthIndex(monthIndex + 1);
+    
   };
   
   return (
