@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeskController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::get('/desks/{id}', [DeskController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
 
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/events/{id}', [EventController::class, 'show']);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -45,6 +48,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     ->only(['store', 'update', 'destroy']);
 
     Route::resource('/categories', CategoryController::class)
+    ->only(['store', 'update', 'destroy']);
+
+    Route::resource('/events', EventController::class)
     ->only(['store', 'update', 'destroy']);
 
     
