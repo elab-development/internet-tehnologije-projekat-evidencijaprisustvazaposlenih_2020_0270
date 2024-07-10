@@ -8,7 +8,7 @@ import { resetPasswordValidate } from '../../utils/validate.js';
 import { useAuthStore } from '../../store/store.js';
 import { useFetch } from '../../hooks/fetch.hook.js';
 import { restartPassword } from '../../api/authRequests.js';
-import Loader from '../Loader';
+import Loader from '../Loader.js';
 
 const Reset = () => {
   const navigate = useNavigate();
