@@ -24,15 +24,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/pg', [UserController::class, 'indexPaginate']);
 Route::get('/users/{id}', [UserController::class, 'show']);
 
 Route::get('/desks', [DeskController::class, 'index']);
+Route::get('/desks/pg', [DeskController::class, 'indexPaginate']);
 Route::get('/desks/{id}', [DeskController::class, 'show']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/categories/pg', [CategoryController::class, 'indexPaginate']);
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
 
 Route::get('/events', [EventController::class, 'index']);
+Route::get('/events/pg', [EventController::class, 'indexPaginate']);
 Route::get('/events/{id}', [EventController::class, 'show']);
 
 Route::post('/register', [AuthController::class, 'register']);

@@ -22,6 +22,15 @@ class UserController extends Controller
         ]);
     }
 
+    public function indexPaginate()
+    {
+        $users = User::all();
+        $users = User::paginate(5);
+        return response()->json([
+            'users' => new UserCollection($users)
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

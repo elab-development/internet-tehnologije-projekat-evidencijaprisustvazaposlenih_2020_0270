@@ -26,6 +26,18 @@ class DeskController extends Controller
         ]);
     }
 
+    public function indexPaginate()
+    {
+        $desks = Desk::all();
+        $desks = Desk::paginate(10);
+        if (is_null($desks) || count($desks) === 0) {
+            return response()->json('No desks found!', 404);
+        }
+        return response()->json([
+            'desks' => new DeskCollection($desks)
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

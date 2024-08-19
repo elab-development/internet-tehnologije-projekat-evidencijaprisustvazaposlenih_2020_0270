@@ -26,6 +26,18 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function indexPaginate()
+    {
+        $categories = Category::all();
+        $categories = Category::paginate(5);
+        if (is_null($categories) || count($categories) === 0) {
+            return response()->json('No categories found!', 404);
+        }
+        return response()->json([
+            'categories' => new CategoryCollection($categories)
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -25,6 +25,13 @@ class EventController extends Controller
         return response()->json(new EventCollection($events));
     }
 
+    public function indexPaginate()
+    {
+        $events = Event::all();
+        $events = Event::paginate(10);
+        return response()->json(new EventCollection($events));
+    }
+
     public function exportCSV()
     {
         return CSV::download(new EventExport, 'event-records.csv');
