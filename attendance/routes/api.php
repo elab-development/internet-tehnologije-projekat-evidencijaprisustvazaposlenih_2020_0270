@@ -39,6 +39,7 @@ Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/pg', [EventController::class, 'indexPaginate']);
 Route::get('/events/{id}', [EventController::class, 'show']);
 
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
