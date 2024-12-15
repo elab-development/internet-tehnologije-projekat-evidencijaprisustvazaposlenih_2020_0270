@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "b6f0ff78-5c35-47f5-b5c1-6abc1fe8f169",
+		"name": "AttendanceSystem Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25235399"
+	},
+	"item": [
+		{
+			"name": "AUTH /api/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/register?name=Jovana Đorđević&email=jd20200325@student.fon.bg.ac.rs&password=password&desk_id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Jovana Đorđević"
+						},
+						{
+							"key": "email",
+							"value": "jd20200325@student.fon.bg.ac.rs"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						},
+						{
+							"key": "desk_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH /api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/login?email=jd20200325@student.fon.bg.ac.rs&password=password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "jd20200325@student.fon.bg.ac.rs"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USER /api/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "USER /api/users/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/users/101"
+			},
+			"response": []
+		},
+		{
+			"name": "DESK /api/desks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "LDIi4DxjQ6GLexnFPS7LVNnUboRVmpzj9cbdttcL478323e3"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Elektronsko poslovanje\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/desks"
+			},
+			"response": []
+		},
+		{
+			"name": "DESK /api/desks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/desks"
+			},
+			"response": []
+		},
+		{
+			"name": "USER /api/desks/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/desks/5"
+			},
+			"response": []
+		},
+		{
+			"name": "DESK /api/desks/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "IzAhaoJc9EU0pH5IeUmVqNlajUoy76EvzTMw44hqd757c428"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Veštačka inteligencija\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/desks/12"
+			},
+			"response": []
+		},
+		{
+			"name": "DESK /api/desks/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "IzAhaoJc9EU0pH5IeUmVqNlajUoy76EvzTMw44hqd757c428"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/desks/12"
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY /api/categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "LDIi4DxjQ6GLexnFPS7LVNnUboRVmpzj9cbdttcL478323e3"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Meeting\",\r\n    \"description\": \"Your meetings\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/categories"
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY /api/categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/categories"
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY /api/categories/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/categories/5"
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY /api/categories/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "IzAhaoJc9EU0pH5IeUmVqNlajUoy76EvzTMw44hqd757c428"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Class\",\r\n    \"description\": \"Your classes\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/categories/6"
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY /api/categories/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "IzAhaoJc9EU0pH5IeUmVqNlajUoy76EvzTMw44hqd757c428"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/categories/12"
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT /api/events",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "LDIi4DxjQ6GLexnFPS7LVNnUboRVmpzj9cbdttcL478323e3"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Uvod u elektronsko poslovanje\",\r\n    \"description\": \"Osnovni koncepti elektronskog poslovanja predavanje\",\r\n    \"date\": \"10-10-24\",\r\n    \"user_id\": 101,\r\n    \"category_id\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/events"
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT /api/events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/events"
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT /api/events/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/events/6"
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT /api/events/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "LDIi4DxjQ6GLexnFPS7LVNnUboRVmpzj9cbdttcL478323e3"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Uvod u elektronsko poslovanje\",\r\n    \"description\": \"Osnovni koncepti elektronskog poslovanja i trendova u industriji - predavanje\",\r\n    \"date\": \"10-10-24\",\r\n    \"user_id\": 101,\r\n    \"category_id\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/events/6"
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT /api/events/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "IzAhaoJc9EU0pH5IeUmVqNlajUoy76EvzTMw44hqd757c428"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/events/4"
+			},
+			"response": []
+		}
+	]
+}
